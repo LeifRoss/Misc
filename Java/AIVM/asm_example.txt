@@ -1,0 +1,20 @@
+
+// count from 100 to 0
+set r0 #b100
+set r1 #b-1
+.L1
+add byte r0 r1 r0
+branche r0 L1
+
+// todo kernel modules, sys and intermodule
+set r1 sys
+set r2 "Hello World"
+write r3 r2 r1 r0
+free r2
+
+// read input and echo back
+set r3 #i1
+malloc r3 r2
+read r4 r3 sys r2
+write r3 r2 sys r4
+
